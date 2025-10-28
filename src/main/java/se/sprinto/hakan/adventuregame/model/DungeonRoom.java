@@ -7,7 +7,7 @@ public class DungeonRoom implements Room {
     @Override
     public void enterRoom(Player player, UI ui) {
         ui.showMessage("Du går ner i en kall fängelsehåla. En vätte står i vägen!");
-        Enemy goblin = new Enemy("Vätte", 20, 0, 5);
+        Giant goblin = new Giant("Vätte", 20, 0, 5);
 
         while (player.isAlive() && goblin.isAlive()) {
             String choice = ui.getInput("Vill du (a)ttackera eller (r)etirera?");
