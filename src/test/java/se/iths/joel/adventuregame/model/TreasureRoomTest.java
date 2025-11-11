@@ -1,31 +1,37 @@
 package se.iths.joel.adventuregame.model;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import se.iths.joel.adventuregame.view.FakeUI;
 import se.sprinto.hakan.adventuregame.model.Player;
 import se.sprinto.hakan.adventuregame.model.TreasureRoom;
+import se.sprinto.hakan.adventuregame.view.UI;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TreasureRoomTest {
+    private FakeUI UI;
+    private TreasureRoom treasureRoom;
+    private Player player;
 
-    @Test
-    public void testTreasureRoom() {
-        TreasureRoom treasureRoom = new TreasureRoom();
-
-        FakeUI ui = new FakeUI();
-        ui.setInputs("a", "ja", "ja");
-
-        Player player = new Player.Builder()
+    @BeforeEach
+    public void setUp() {
+        UI = new FakeUI();
+        treasureRoom = new TreasureRoom();
+        player = new Player.Builder()
                 .setName("Joel")
                 .setHealth(100)
                 .setScore(0)
                 .setStrength(50)
                 .setFoundKey(true)
                 .build();
+    }
 
-        treasureRoom.enterRoom(player, ui);
+    @Test
+    public void testTreasureRoom() {
+        UI.setInputs("a", "ja", "ja");
+
+        treasureRoom.enterRoom(player, UI);
 
         assertTrue(player.hasOpenedChest());
         assertEquals(150, player.getScore());

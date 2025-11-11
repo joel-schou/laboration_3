@@ -50,8 +50,8 @@ public class Player extends AbstractCharacter {
             return this;
         }
 
-        public Builder setDefeatedEnemy(boolean defeatedEnemy) {
-            this.defeatedEnemy = defeatedEnemy;
+        public Builder setHasShield(boolean hasShield) {
+            this.hasShield = hasShield;
             return this;
         }
 

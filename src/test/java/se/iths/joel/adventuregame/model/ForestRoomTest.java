@@ -1,29 +1,35 @@
 package se.iths.joel.adventuregame.model;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import se.iths.joel.adventuregame.view.FakeUI;
 import se.sprinto.hakan.adventuregame.model.ForestRoom;
 import se.sprinto.hakan.adventuregame.model.Player;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ForestRoomTest {
-    @Test
-    public void testEnterRoom() {
-        ForestRoom forestRoom = new ForestRoom();
+    private FakeUI UI;
+    private ForestRoom forestRoom;
+    private Player player;
 
-        FakeUI ui = new FakeUI();
-        ui.setInputs("ja");
-
-        Player player = new Player.Builder()
+    @BeforeEach
+    public void setUp() {
+        UI = new FakeUI();
+        forestRoom = new ForestRoom();
+        player = new Player.Builder()
                 .setName("Joel")
                 .setHealth(100)
                 .setScore(0)
                 .setStrength(10)
                 .build();
+    }
 
-        forestRoom.enterRoom(player, ui);
+    @Test
+    public void testForestRoom() {
+        UI.setInputs("ja");
+
+        forestRoom.enterRoom(player, UI);
 
         assertTrue(player.hasFoundKey());
     }
