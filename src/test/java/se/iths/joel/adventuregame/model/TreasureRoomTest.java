@@ -15,19 +15,19 @@ public class TreasureRoomTest {
         TreasureRoom treasureRoom = new TreasureRoom();
 
         FakeUI ui = new FakeUI();
-        ui.setInput("nej");
+        ui.setInputs("a", "ja", "ja");
 
         Player player = new Player.Builder()
                 .setName("Joel")
                 .setHealth(100)
                 .setScore(0)
-                .setStrength(10)
+                .setStrength(50)
                 .setFoundKey(true)
                 .build();
 
         treasureRoom.enterRoom(player, ui);
 
         assertTrue(player.hasOpenedChest());
-        assertEquals(100, player.getScore());
+        assertEquals(150, player.getScore());
     }
 }

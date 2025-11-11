@@ -14,7 +14,7 @@ public class ForestRoomTest {
         ForestRoom forestRoom = new ForestRoom();
 
         FakeUI ui = new FakeUI();
-        ui.setInput("ja");
+        ui.setInputs("ja");
 
         Player player = new Player.Builder()
                 .setName("Joel")

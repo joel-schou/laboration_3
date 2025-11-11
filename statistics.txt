@@ -1,1 +1,9 @@
 joel;0
+Marky;170
+jeol;50
+joel;0
+test;50
+33;0
+test2;50
+test3;0
+joel;270
