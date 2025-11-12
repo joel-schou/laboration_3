@@ -27,7 +27,7 @@ public class ForestRoomTest {
 
     @Test
     public void testForestRoom() {
-        UI.setInputs("ja");
+        UI.setInput("ja");
 
         forestRoom.enterRoom(player, UI);
 

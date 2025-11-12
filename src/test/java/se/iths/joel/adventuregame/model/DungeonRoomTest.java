@@ -29,7 +29,7 @@ public class DungeonRoomTest {
 
     @Test
     public void testDungeonRoom() {
-        UI.setInputs("a");
+        UI.setInput("a");
 
         dungeonRoom.enterRoom(player, UI);
 
@@ -38,7 +38,7 @@ public class DungeonRoomTest {
 
     @Test
     public void testDungeonRoomR() {
-        UI.setInputs("r");
+        UI.setInput("r");
 
         dungeonRoom.enterRoom(player, UI);
 

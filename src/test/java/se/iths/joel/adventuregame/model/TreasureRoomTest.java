@@ -28,7 +28,9 @@ public class TreasureRoomTest {
 
     @Test
     public void testTreasureRoom() {
-        UI.setInputs("a", "ja", "ja");
+        UI.setInput("a");
+        UI.setInput("ja");
+        UI.setInput("ja");
 
         treasureRoom.enterRoom(player, UI);
 
