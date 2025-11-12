@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import se.iths.joel.adventuregame.view.FakeUI;
 import se.sprinto.hakan.adventuregame.model.Player;
 import se.sprinto.hakan.adventuregame.model.TreasureRoom;
-import se.sprinto.hakan.adventuregame.view.UI;
 
 import static org.junit.jupiter.api.Assertions.*;
 
