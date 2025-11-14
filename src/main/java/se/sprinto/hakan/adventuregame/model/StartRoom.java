@@ -20,7 +20,7 @@ public class StartRoom implements Room {
 
                     break;
                 case "2":
-                    if (!player.hasFoundKey()) {
+                    if (!player.hasDefeatedEnemy()) {
                         new DungeonRoom().enterRoom(player, ui);
                     } else {
                         ui.showMessage("Du har redan dödat jätten!");
